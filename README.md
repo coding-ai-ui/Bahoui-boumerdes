@@ -36,9 +36,7 @@ Public social images are limited in resolution (mostly 361 × 640). For large de
 
 Fonts are self-hosted Cormorant Garamond and DM Sans from Fontsource. Their licenses are distributed with the packages. The website does not load a social embed or analytics, and contains no payment workflow. The reservation form prepares a local summary and opens a telephone call to Rahoui. It does not transmit an online booking or claim automatic confirmation.
 
-## Hosting
 
-`.openai/hosting.json` records the existing Sites identity. Keep this ID when editing or republishing. The initial deployment is private. The owner can separately decide when to publish publicly and connect a commercial domain. When the confirmed domain changes, update `business.website` before building.
 
 ## Reservations
 
