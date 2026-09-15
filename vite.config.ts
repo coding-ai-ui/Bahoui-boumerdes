@@ -13,7 +13,7 @@ export default defineConfig({
      '@context': 'https://schema.org', '@type': 'Restaurant', name: business.name,
      url: `${origin}/`, logo: `${origin}/images/rahoui-logo.jpg`,
      address: { '@type': 'PostalAddress', addressLocality: business.city, addressCountry: 'DZ' },
-     hasMap: business.maps, sameAs: [business.instagram, business.tiktok],
+     telephone: business.phone, hasMap: business.maps, sameAs: [business.instagram, business.tiktok],
     }).replace(/</g, '\\u003c'), injectTo: 'head' },
    ];
   },

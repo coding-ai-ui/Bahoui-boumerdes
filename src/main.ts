@@ -4,6 +4,8 @@ import '@fontsource/cormorant-garamond/latin-500.css';
 import '@fontsource/dm-sans/latin-400.css';
 import '@fontsource/dm-sans/latin-500.css';
 import './style.css';
+import './reservation.css';
+import { setupReservations } from './reservation';
 import { business as b } from './config/business';
 import { renderContent } from './content';
 
@@ -14,15 +16,16 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <header class="site-header">
  <nav class="desktop-nav nav-left" aria-label="Navigation principale"><a href="#accueil">Accueil</a><a href="#maison">La Maison</a><a href="#carte">La Carte</a></nav>
  <a class="brand" href="#accueil" aria-label="Rahoui, accueil">${logo}</a>
- <nav class="desktop-nav nav-right" aria-label="Suite de la navigation"><a href="#patisserie">Pâtisserie</a><a href="#galerie">Galerie</a><a href="#contact">Contact</a>${external(b.maps,'Nous trouver ↗','nav-cta')}</nav>
+ <nav class="desktop-nav nav-right" aria-label="Suite de la navigation"><a href="#patisserie">Pâtisserie</a><a href="#galerie">Galerie</a><a href="#contact">Contact</a><button type="button" class="nav-reserve" data-reserve>Réserver</button></nav>
  <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-navigation">Menu <span aria-hidden="true">☰</span></button>
 </header>
 <main id="main">
  <section id="accueil" class="hero">
-  <div class="hero-copy"><p class="eyebrow">RAHOUI BOUMERDÈS</p><h1>Une adresse<br>à <em>savourer.</em></h1><p class="hero-description">Le temps d’un café.<br>Le plaisir de se retrouver.</p><a class="button button-light" href="#carte">Découvrir la carte <span aria-hidden="true">↗</span></a><p class="hero-category">CAFÉ <span>·</span> PÂTISSERIE <span>·</span> RESTAURANT</p></div>
+  <div class="hero-copy"><p class="eyebrow">RAHOUI BOUMERDÈS</p><h1>Une adresse<br>à <em>savourer.</em></h1><p class="hero-description">Le temps d’un café.<br>Le plaisir de se retrouver.</p><div class="hero-buttons"><a class="button button-light" href="#carte">Découvrir la carte <span aria-hidden="true">↗</span></a><button type="button" class="button reserve-outline" data-reserve>Réserver une table</button></div><p class="hero-category">CAFÉ <span>·</span> PÂTISSERIE <span>·</span> RESTAURANT</p></div>
   <figure class="hero-photo"><img src="/images/patisserie.jpg" width="361" height="640" alt="Pâtisserie Rahoui garnie de crème et décorée d’une tuile dorée" fetchpriority="high"/><figcaption>La pâtisserie, chez Rahoui.</figcaption></figure>
   <div class="hero-bottom"><span>BOUMERDÈS — ALGÉRIE</span><a href="#maison">Prenez le temps <span aria-hidden="true">↓</span></a></div>
  </section>
  <div id="rest"></div>
 </main>`;
 renderContent();
+setupReservations({type:'phone',destination:b.phone});

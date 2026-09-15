@@ -15,7 +15,7 @@ The production output is `dist/`. Serve this directory over HTTP; opening its HT
 
 ## Content maintenance
 
-- `src/config/business.ts`: business identity, exact social and Maps links, production origin. Unknown telephone, email, WhatsApp and hours remain empty and hidden.
+- `src/config/business.ts`: business identity, exact social and Maps links, production origin. Phone +213 673 55 48 84 is verified on the official Instagram and the supplied Google Maps listing. Email, WhatsApp and hours remain empty and hidden.
 - `src/data/menu.ts`: category text and owner-approved dishes/prices. No demo items. Prices use Algerian dinars. Update only with confirmed current details.
 - `src/data/gallery.ts`: gallery photographs, accessible descriptions and source URLs. This is a static selection, not a live Instagram feed.
 - `src/content.ts`: French page content and accessible native-dialog interactions.
@@ -34,8 +34,12 @@ Photographs were saved from posts on the restaurant's official public Instagram 
 
 Public social images are limited in resolution (mostly 361 × 640). For large desktop displays, the owner can supply original high-resolution exports under the same filenames. Copyright remains with the respective rights holders.
 
-Fonts are self-hosted Cormorant Garamond and DM Sans from Fontsource. Their licenses are distributed with the packages. The website does not load a social embed or analytics, and contains no reservation/payment workflow.
+Fonts are self-hosted Cormorant Garamond and DM Sans from Fontsource. Their licenses are distributed with the packages. The website does not load a social embed or analytics, and contains no payment workflow. The reservation form prepares a local summary and opens a telephone call to Rahoui. It does not transmit an online booking or claim automatic confirmation.
 
 ## Hosting
 
 `.openai/hosting.json` records the existing Sites identity. Keep this ID when editing or republishing. The initial deployment is private. The owner can separately decide when to publish publicly and connect a commercial domain. When the confirmed domain changes, update `business.website` before building.
+
+## Reservations
+
+`src/reservation.ts` handles date/time/party validation, safe summary rendering, and the verified telephone handoff. No personal information is stored. Rahoui confirms table availability during the call.
